@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nju.mapper.CollectionMapper">
+
+    <select id="seletMusicByList" resultType="Music">
+        select mu.songname,mu.singer,mu.length,mu.album,mu.path,mu.playCount,mu.likeCount
+        from tb_collection co,tb_music mu
+        where co.songname = mu.songName and co.singername = mu.singer
+            and co.listname = #{listname} and co.username = #{username};
+    </select>
+
+    <select id="selectColl" resultType="CollectionRelation">
+        select *
+        from tb_collection
+        where username=#{coll.username} and songname=#{coll.songname} and
+                singername=#{coll.singername} and listname=#{coll.listname};
+    </select>
+
+    <insert id="addLike">
+        insert into tb_collection(username,songname,singername,listname)
+        value (#{coll.username},#{coll.songname},#{coll.singername},#{coll.listname})
+        ;
+    </insert>
+
+</mapper>

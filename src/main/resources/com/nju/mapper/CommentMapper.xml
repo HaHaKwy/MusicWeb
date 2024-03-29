@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nju.mapper.CommentMapper">
+
+    <select id="selectComment" resultType="Comment">
+        select *
+        from tb_comment
+        where listname = #{listname} and creator = #{creator};
+    </select>
+
+    <insert id="insertComment">
+        insert into tb_comment(username,listname,creator,text,timestamp)
+        value (
+        #{comment.username},
+        #{comment.listname},
+        #{comment.creator},
+        #{comment.text},
+        #{comment.timestamp}
+        );
+    </insert>
+</mapper>

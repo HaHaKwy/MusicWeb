@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/beatSoul.css">
+    <script src="./src/libs/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./src/js/axios-0.18.0.js"></script>
+    <script src="./src/js/global.js"></script>
+    <script src="./src/js/setting.js"></script>
+    <script src="./src/js/road.js"></script>
+    <script src="./src/js/beatSoul.js"></script>
+    <script src="./src/js/gameSetting.js"></script>
+    <title>BeatSoul~</title>
+</head>
+<body>
+    <audio src="" id="Au"></audio>
+    <div class="background-wrap">
+        <div class="road">
+            <div id="row-one" class="row" index="1"></div>
+            <div id="row-two" class="row" index="2"></div>
+            <div id="row-three" class="row" index="3"></div>
+            <div id="row-four" class="row" index="4"></div>
+        </div>
+        <div class="screen-wrap">
+            <div id="screen-one" class="screen">
+                <div class="screen-outline"></div>
+            </div>
+            <div id="screen-two" class="screen">
+                <div class="screen-outline"></div>
+            </div>
+            <div id="screen-three" class="screen">
+                <div class="screen-outline"></div>
+            </div>
+            <div id="screen-four" class="screen">
+                <div class="screen-outline"></div>
+            </div>
+        </div>
+        <div class="line-top"></div>
+        <div class="line-bottom"></div>
+        <div class="start">开始游戏</div>
+        <div class="countdown"></div>
+    </div>
+    <div class="score-wrap">
+        <div>
+            <span class="txt">Score:</span>
+            <span class="score">0</span>
+        </div>
+        <div>
+            <span class="txt">MaxCombo:</span>
+            <span class="maxCombo">0</span>
+        </div>
+    </div>
+    <div class="combo-wrap">
+        <span class="txt">COMBO:</span>
+        <span class="combo">0</span>
+    </div>
+    <div class="endtime-wrap">
+        <span>Remaining: </span>
+        <span id="endTime-minute">0</span>
+        <span>:</span>
+        <span id="endTime-second">00</span>
+    </div>
+    <div class="stop-game">
+        <span>退出</span>
+    </div>
+    <div class="setting-wrap">
+        <img src="./src/images/setting.png" alt="">
+    </div>
+    <div class="setting-nav">
+        <div class="setting-nav-wrap">
+            <div class="dificult-select"><span>歌曲选择</span></div>
+            <div class="setting-dificult">
+                <div class="dificult" style="margin-top: 5px;"><span>Faded</span><span> - </span><span>Alan Walker</span></div>
+                <div class="dificult" style="margin-top: 5px;"><span>所念皆星河</span><span> - </span><span>CMJ</span></div>
+                <div class="dificult" style="margin-top: 5px;"><span>寂静之空</span><span> - </span><span>傅许</span></div>
+                <div class="dificult" style="margin-top: 5px;"><span>花海</span><span> - </span><span>周杰伦</span></div>
+                <div class="dificult" style="margin-top: 5px;"><span>晴天</span><span> - </span><span>周杰伦</span></div>
+                <div class="dificult" style="margin-top: 5px;"><span>我记得</span><span> - </span><span>赵雷</span></div>
+                <div class="dificult" style="margin-top: 5px;"><span>幻听</span><span> - </span><span>许嵩</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

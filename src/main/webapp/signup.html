@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html >
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Login/Signup</title>
+
+<!--图标样式-->
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css'>
+	<link rel="stylesheet" href="src/css/login_signup.css">
+	<link rel="stylesheet" type="text/css" href="./src/css/ns-default.css" />
+	<link rel="stylesheet" type="text/css" href="./src/css/ns-style-growl.css" />
+	<script type="text/javascript" src="./src/js/modernizr.custom.js"></script>
+</head>
+
+<body>
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form name="signup">
+			<h1>注册</h1>
+			<input type="text" placeholder="用户名" name="username" required="required"/>
+			<input type="email" placeholder="邮箱" name="email" required="required"/>
+			<input type="password" placeholder="密码" name="password" required="required"/>
+			<button type="button" onclick="to_signup();">注册</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form name="signin">
+			<h1>登录</h1>
+			<input type="text" placeholder="用户名" name="username" required="required"/>
+			<input type="password" placeholder="密码" name="password" required="required"/>
+			<a href="#">忘记密码？</a>
+			<button type="button" onclick="to_login();">登录</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>欢迎回来！</h1>
+				<p>请您先登录的个人信息，进行操作</p>
+				<button class="ghost" id="signIn">登录</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>你好朋友！</h1>
+				<p>输入您的个人信息注册用户</p>
+				<button class="ghost" id="signUp">注册</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		welcome
+	</p>
+</footer>
+
+<script src="./src/js/classie.js"></script>
+<script src="./src/js/notificationFx.js"></script>
+<script src="./src/js/global.js"></script>
+
+<script src="src/js/axios-0.18.0.js"></script>
+<script src="src/js/login_signup.js"></script>
+
+</body>
+</html>

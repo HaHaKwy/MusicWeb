@@ -1,0 +1,403 @@
+/* 第一排 */
+*{padding:0;margin:0;}
+.topnav-searchbox {
+    width: 75%;
+    height: 75px;
+    background-color: #242424;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.topnav {
+    background-color: #242424;
+    border-bottom: 1px solid #202020;
+    text-align: center;
+    overflow: hidden;
+}
+
+.topnav-logo {
+    text-align: center;
+    font-size: 70px;
+    width:22px;
+    height:22px;
+    line-height: 75px;
+    margin-right: 5px;
+}
+.topnav-wyy{
+    float: left;
+    width: 20%;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+}
+.topnav-wyy a {
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    line-height: 75px;
+    text-decoration: none;
+}
+
+.topnav-searchbox>.topnav-nav-input {
+    float: right;
+    width: 150px;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+    margin: 0px 25px; 
+}
+.topnav-nav{
+    float: left;
+    width: auto;
+    height: 75px;
+    text-align: center;
+    margin-right: 30px;
+}
+.topnav-nav>div{
+    float:left;
+    width: auto;
+    height: 75px;
+    padding: 0 20px;
+    text-align: center;
+    line-height: 75px;
+    color: rgb(209, 208, 208);
+    position: relative;
+    
+}
+.topnav-nav>div>a{
+    float:left;
+    width: auto;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+    color: rgb(209, 208, 208);
+    position: relative;
+    text-decoration: none;
+}
+.topnav-nav>div>a:hover{
+    color: white;
+}
+.topnav-nav>div:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.menu_search{
+	position:relative;
+    height: 75px;
+    width: 200px;
+    text-align: center;
+    line-height: 75px;
+    float: right;
+    margin: 0 25px;
+    margin-right: 15px;
+}
+.menu_search>.search_inp{
+	display:inline-block;
+	border:none;
+	outline:none;
+	width:160px;
+    height: 22px;
+	padding:5px 30px 5px 10px;
+	border-radius:20px;
+	background-color:rgb(255, 255, 255);
+	color:#000000;
+}
+.menu_search>.search_btn{
+	position:absolute;
+    right:10px;
+    cursor:pointer;
+}
+.menu_search>.search_btn>.fa{
+	font-size:0.7rem;
+	color:#9f9f9f;
+}
+.login{
+	float:right;
+	width:auto;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+    color:white;
+}
+.login>.login_link{
+	position:relative;
+	color: rgb(209, 208, 208);
+    text-align: center;
+    line-height: 75px;
+    text-decoration: none;
+    width:auto;
+}
+
+/* 第二排 推荐 */
+.recommend {
+    width: 100%;
+    height: 30px;
+    border-bottom: 4px solid #a40011;
+    background-color: #c20c0c;
+}
+
+.recommend-box {
+    margin-left: 198px;
+    font-size: 12px;
+}
+
+.recommend-box li {
+    float: left;
+    height: 20px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding: 0 13px;
+    margin: 7px 17px 0;
+    line-height: 20px;
+}
+
+.recommend-box li:nth-child(1) {
+    background-color: rgba(0, 0, 0, 0.14);
+}
+
+.recommend-box li:hover {
+    background-color: rgba(0, 0, 0, 0.14);
+}
+
+.recommend-box ul {
+    float: left;
+
+}
+
+.recommend-box li a {
+    color: #ffffff;
+}
+
+.recommend-box li:nth-child(3) {
+    position: relative;
+}
+
+.R {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 1px;
+    left: 37px;
+}
+
+
+/* 第三排 轮播图 */
+
+.slideshow {
+    width: 100%;
+    height: 21.6vw;
+    background-image: url('../images/poster1.png');
+    background-size: cover;
+    overflow:visible;
+}
+
+.bj-left-img {
+    display: none;
+}
+
+.slideshow .bj-left {
+    float: left;
+    height: 100%;
+    width: 20%;
+    text-align: right;
+    line-height: 400px;
+    backdrop-filter: blur(40px);
+}
+
+.slideshow .slideshow-sli{
+    display: inline-block;
+    margin: 0;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+    background-image: url('../images/poster1.png');
+    background-size:cover;
+}
+.slideshow-sli ul{
+    text-align: center;
+    line-height: 30px;
+    position: relative;
+    top:91%;
+    cursor: default;
+}
+.slideshow-sli li{
+
+    width: 30px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 10px;  
+    font-size: 3px;
+    color: silver;
+    cursor: pointer;
+}
+.slideshow-sli li:hover{
+    color: rgba(255, 0, 0, 0.71);
+}
+.slideshow .bj-right {
+    float: right;
+    width: 20%;
+    height: 100%;
+    text-align: left;
+    line-height: 400px;
+    backdrop-filter: blur(40px);
+}
+
+.slideshow .newcontainer {
+    height: 100%;
+}
+
+
+
+
+.hot .newcontainer {
+    height: auto;
+    padding-bottom: 50px;
+    background-image: url('../images/back.gif');
+    background-size: cover;
+    backdrop-filter: blur(40px);
+}
+
+/* 左边,上部导航 */
+.hot-left {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    background-color: #f3eeeecb;
+    border: 2px silver solid;
+}
+.heart{
+    float: left;
+    width: 20px;
+    text-align: center;
+}
+.hot-left-top-nav {
+    width: 100%;
+    background-color: violet;
+}
+
+.hot-left-top p,
+.hot-left-top a {
+    float: left;
+    margin: 0 24px;
+    color: #6f6f6f;
+    text-decoration: none;
+}
+.hot-left-top a:hover {
+    color:#3a3a3a;
+}
+.refresh:hover{
+    rotate:360deg;
+    transition-duration: 1s;
+}
+.hot-left-top {
+    width: 90%;
+    height: 36px;
+    line-height: 36px;
+    padding-top: 17px;
+    margin: 0 auto;
+    border-bottom: 2px solid #c10d0c;
+    margin-bottom: 20px;
+}
+.hot-left-top li{
+    float: left;
+    margin:0 10px;
+    list-style: none;
+    color: #9f9f9f;
+    cursor: default;
+    overflow: hidden;
+}
+.hot-left-top li:hover{
+    cursor: default;
+}
+.hot-left-top p {
+    font-size: 20px;
+    margin: 0 10px 0 10px;
+}
+.hot-left-video{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.hot-left-video>div{
+    float: left;
+    width: 20%;
+    height: 20%;
+    margin-right: 4%;
+    overflow: hidden;
+}
+.hot-left-video img{
+    width:100%;
+}
+.hot-left-video img:hover{
+    scale: 1.2;
+    transition-duration: 0.3s;
+}
+.hot-left-bottom {
+    width: 90%;
+    height: 36px;
+    line-height: 36px;
+    padding-top: 17px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-bottom: 2px solid #c10d0c;
+    margin-bottom: 20px;
+}
+.hot-left-bottom p {
+    font-size: 20px;
+    float: left;
+    margin: 0 10px 0 10px;
+    color: #6f6f6f;
+    text-decoration: none;
+}
+.rank{
+    width: 80%;
+    margin: 0 auto;
+}
+.rank>div{
+    height:40px;
+    line-height: 40px;
+    font-size: larger;
+}
+.songRank{
+    float: left;
+    width: 2em;
+    text-align: center;
+    margin-right: 5px;
+}
+.songName{
+    float: left;
+    width: auto;
+}
+.singerName{
+    float: left;
+    color: #6f6f6f;
+    font-size: 16px;
+    margin-left: 15px;
+}
+.songScore{
+    float: right;
+    color: #6f6f6f;
+    font-size: small;
+    margin-right: 15px;
+}
+
+.fh-top {
+    position: fixed;
+    right: 15%;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 30px;
+    color: skyblue;
+}
+.fh-top:active{
+    color: #c10215;
+}

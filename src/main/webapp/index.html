@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyPlayer</title>
+    <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/css/ns-default.css" />
+    <link rel="stylesheet" type="text/css" href="./src/css/ns-style-growl.css" />
+    <script type="text/javascript" src="./src/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="./src/js/axios-0.18.0.js"></script>
+    <script type="text/javascript" src="./src/libs/jquery-3.1.1.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- 第一排  -->
+    <div class="topnav" id="top">
+        <!-- 版心 -->
+        <div class="container" style="text-align: center;">
+            <!-- 搜索栏 -->
+            <div class="topnav-searchbox">
+                <!-- 左 -->
+                <span class="topnav-wyy " style="float: left;"><i class="fa topnav-logo fa-skyatlas" style="font-size: 22px; color: silver;"></i><a href="#"> WYY音乐</a></span>
+                <div class="topnav-nav">
+                    <div>
+                        <a href="#explore">发现音乐</a>
+                    </div>
+                    <div id="myMusic" onclick="toMyMusic()">
+                        我的音乐
+                    </div>
+                    <div>
+                        <a href="./beatSoul.html">beatSoul</a>
+                    </div>
+                    <div>
+                        商城
+                    </div>
+                    <div>
+                        音乐人
+                    </div>
+                </div>
+                <div class="login">
+                    <span id="uName"></span>
+                    <a href="#" class="login_link" id="btn_login" target="_self" onclick="toLogin()">登录</a>
+                </div>
+                <div class="menu_search">
+                    <input type="text" placeholder="探索音乐、歌手、歌词、用户" autofocus="" id="inpSearch_main" class="search_inp" />
+                    <span class="search_btn" id="top_searchBtn_main"><i class="fa fa-search" aria-hidden="true"></i></span>
+                </div>
+                
+                <!-- 右
+                <a href="#" style="float: right;">登录</a>
+                <div class="topnav-nav-input">
+                    <input type="text" placeholder="音乐/视频/电台/用户">
+                </div> -->
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二排 推荐 -->
+    <div class="recommend " id="id-top">
+        <!-- 版心 -->
+        <div class="container">
+            <div class="recommend-box">
+            </div>
+        </div>
+    </div>
+
+    <!-- 第三排 轮播图 -->
+    <div class="slideshow" id="bottomShow">
+        <!-- 版心 -->
+        <div class="newcontainer clearfix">
+            <!--  左边图片  -->
+            <div class="bj-left clearfix">
+                <i class="fa fa-angle-left" aria-hidden="true" style="color: aliceblue; font-size: 80px; margin-right: 35px;" onclick="preSlide()"></i>
+            </div>
+
+            <!-- 下面 轮播图 -->
+            <div class="slideshow-sli" id="topShow">
+                <ul>
+                    <li>
+                        <i class="fa fa-circle" id="slide-icon1" aria-hidden="true" onclick="turnToImg(1)"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle" id="slide-icon2" aria-hidden="true" onclick="turnToImg(2)"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle" id="slide-icon3" aria-hidden="true" onclick="turnToImg(3)"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle" id="slide-icon4" aria-hidden="true" onclick="turnToImg(4)"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle" id="slide-icon5" aria-hidden="true" onclick="turnToImg(5)"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle" id="slide-icon6" aria-hidden="true" onclick="turnToImg(6)"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle" id="slide-icon7" aria-hidden="true" onclick="turnToImg(7)"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle" id="slide-icon8" aria-hidden="true" onclick="turnToImg(8)"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="bj-right clearfix">
+                <i class="fa fa-angle-right" aria-hidden="true" style="color: aliceblue; font-size: 80px; margin-left: 35px;" onclick="nextSlide()"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第四排 热门推荐 -->
+    <div class="hot" id="explore">
+        <!-- 新版心 -->
+        <div class="newcontainer">
+            <!-- 左边 -->
+            <div class=" hot-left">
+                <!-- 上面导航 -->
+                <div class="hot-left-top clearfix">
+                    <!-- 左 -->
+                    <div class="heart"><i class="fa fa-heartbeat" style="color: #c10d0c;"></i></div>
+                    <p>热门推荐</p>
+                    <a href="#">华语</a>
+                    <li>|</li>
+                    <a href="#">流行</a>
+                    <li>|</li>
+                    <a href="#">摇滚</a>
+                    <li>|</li>
+                    <a href="#">民谣</a>
+                    <li>|</li>
+                    <a href="#">电子</a>
+                    <span style="float: right; text-align: center; height:30px; line-height: 30px;">
+                        <i class="fa fa-refresh refresh" style="float: right; font-size: 15px; color: #c10d0c; height: 30px; line-height: 30px; margin: auto;"></i>
+                        <button type="button" id="refresh" style="float: right; margin: 3px 5px; height:25px; padding: 2px 5px; ">换一批</button>
+                    </span>
+                </div>
+
+                <!-- 视频 -->
+                <div class="hot-left-video clearfix">
+                    <!-- 1 -->
+                    <div style="margin-left: 4%;">
+                        <img src="./src/images/alq.png" alt="" onclick="toRecommend(1)">
+                        <a href="#" onclick="toRecommend(1)">玩儿命加载中</a>
+                        <span class="img-back-g"></span>
+                        <span class="img-bottom">
+                            <span class="bfl"></span>
+                        <b></b>
+                        <a class="bof"></a>
+                        </span>
+                    </div>
+                    <!-- 2 -->
+                    <div>
+                        <img src="./src/images/alq.png" alt="" onclick="toRecommend(2)">
+                        <a href="#" onclick="toRecommend(2)">玩儿命加载中</a>
+                        <span class="img-back-g"></span>
+                        <span class="img-bottom">
+                            <span class="bfl"></span>
+                        <b></b>
+                        <a class="bof"></a>
+                        </span>
+                    </div>
+                    <!-- 3 -->
+                    <div>
+                        <img src="./src/images/alq.png" alt="" onclick="toRecommend(3)">
+                        <a href="#" onclick="toRecommend(3)">玩儿命加载中</a>
+                        <span class="img-back-g"></span>
+                        <span class="img-bottom">
+                            <span class="bfl"></span>
+                        <b></b>
+                        <a class="bof"></a>
+                        </span>
+                    </div>
+                    <!-- 4 -->
+                    <div>
+                        <img src="./src/images/alq.png" onclick="toRecommend(4)">
+                        <a href="#" onclick="toRecommend(4)">玩儿命加载中</a>
+                        <span class="img-back-g"></span>
+                        <span class="img-bottom">
+                            <span class="bfl"></span>
+                        <b></b>
+                        <a class="bof"></a>
+                        </span>
+                    </div>
+                    <!-- 5 -->
+                    <div  style="margin-left: 4%;">
+                        <img src="./src/images/alq.png" onclick="toRecommend(5)">
+                        <a href="#" onclick="toRecommend(5)">玩儿命加载中</a>
+                        <span class="img-back-g"></span>
+                        <span class="huangg"></span>
+                        <span class="img-bottom">
+                            <span class="bfl"></span>
+                        <b></b>
+                        <a class="bof"></a>
+                        </span>
+                    </div>
+                    <!-- 6 -->
+                    <div>
+                        <img src="./src/images/alq.png" onclick="toRecommend(6)">
+                        <a href="#" onclick="toRecommend(6)">玩儿命加载中</a>
+                        <span class="img-back-g"></span>
+                        <span class="img-bottom">
+                            <span class="bfl"></span>
+                        <b></b>
+                        <a class="bof"></a>
+                        </span>
+                    </div>
+                    <!-- 7 -->
+                    <div>
+                        <img src="./src/images/alq.png"  onclick="toRecommend(7)">
+                        <a href="#" onclick="toRecommend(7)">玩儿命加载中</a>
+                        <span class="img-back-g"></span>
+                        <span class="img-bottom">
+                            <span class="bfl"></span>
+                        <b></b>
+                        <a class="bof"></a>
+                        </span>
+
+                    </div>
+                    <!-- 8 -->
+                    <div>
+                        <img src="./src/images/alq.png"  onclick="toRecommend(8)">
+                        <a href="#" onclick="toRecommend(8)">玩儿命加载中</a>
+                        <span class="img-back-g"></span>
+                        <span class="img-bottom">
+                            <span class="bfl"></span>
+                        <b></b>
+                        <a class="bof"></a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="hot-left-bottom clearfix">
+                    <!-- 左 -->
+                    <div class="heart"><i class="fa fa-fire" style="color: #c10d0c;"></i></div>
+                    <p>热度排行</p>
+                </div>
+                <div class="rank">
+                    <div><span class="songRank" style="color:#c10d0c">1</span><span class="songName">song1</span><span class="singerName">singer</span><span class="songScore">播放量：100  收藏量：100</span></div>
+                    <div><span class="songRank" style="color:#c10d0c">2</span><span class="songName">song2</span><span class="singerName">singer</span><span class="songScore">播放量：100  收藏量：100</span></div>
+                    <div><span class="songRank" style="color:#c10d0c">3</span><span class="songName">song3</span><span class="singerName">singer</span><span class="songScore">播放量：100  收藏量：100</span></div>
+                    <div><span class="songRank">4</span><span class="songName">song4</span><span class="singerName">singer</span><span class="songScore">播放量：100  收藏量：100</span></div>
+                    <div><span class="songRank">5</span><span class="songName">song5</span><span class="singerName">singer</span><span class="songScore">播放量：100  收藏量：100</span></div>
+                    <div><span class="songRank">6</span><span class="songName">song6</span><span class="singerName">singer</span><span class="songScore">播放量：100  收藏量：100</span></div>
+                    <div><span class="songRank">7</span><span class="songName">song7</span><span class="singerName">singer</span><span class="songScore">播放量：100  收藏量：100</span></div>
+                    <div><span class="songRank">8</span><span class="songName">song8</span><span class="singerName">singer</span><span class="songScore">播放量：100  收藏量：100</span></div>
+                    <div><span class="songRank">9</span><span class="songName">song9</span><span class="singerName">singer</span><span class="songScore">播放量：100  收藏量：100</span></div>
+                    <div><span class="songRank">10</span><span class="songName">song10</span><span class="singerName">singer</span><span class="songScore">播放量：100  收藏量：100</span></div>
+                </div>
+        <!-- 放回,固定 -->
+       
+    </div> 
+    <a href="#top" class="fh-top" title="返回顶部"><i class="fa fa-arrow-circle-up" style="font-size: 40px;"></i></a>
+
+    <script src="./src/js/classie.js"></script>
+    <script src="./src/js/notificationFx.js"></script>
+    <script src="./src/js/global.js"></script>
+    <script type="text/javascript" src="./src/js/index.js"></script>
+
+</body>
+
+</html>

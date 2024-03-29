@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/ico" href="./src/images/format.ico" />
+	<link rel="stylesheet" type="text/css" href="./src/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="./src/css/search2.css" />
+	<link rel="stylesheet" type="text/css" href="./src/css/search.css" />
+	<link rel="stylesheet" type="text/css" href="./src/css/subPage.css"/>
+	<link rel="stylesheet" type="text/css" href="./src/css/ns-default.css" />
+	<link rel="stylesheet" type="text/css" href="./src/css/ns-style-growl.css" />
+	<script type="text/javascript" src="./src/js/modernizr.custom.js"></script>
+	<!-- <script type="text/javascript" src="./src/libs/jquery-3.1.1.min.js"></script> -->
+	<script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="./src/js/axios-0.18.0.js"></script>
+    <title>搜索详情</title>
+</head>
+<body>
+<div class="main">
+	<div class="form_1">
+		<form>
+			<div class="input_1">
+				<div class="login_logo">我的歌单</div>
+				<div class="close">X</div>
+			</div>
+			<hr>
+			<div class="active_scroll">
+				<div class="group">
+					<label>
+						<input type="checkbox" class="box" name="parent_checkbox" />
+						歌单1
+					</label>
+					<label>
+						<input type="checkbox" class="box" name="parent_checkbox" />
+						歌单2
+					</label>
+					<label>
+						<input type="checkbox" class="box" name="parent_checkbox" />
+						歌单3
+					</label>
+				</div>
+				<div class="input_1"><button class="submit_1" type="button">收藏</button></div>
+			</div>
+		</form>
+	</div>
+</div>
+
+    <div class="page_menu clearfix">
+		<div class="menu_search" style="float:none; width: 300px; margin: 0 auto;">
+			<input type="text" placeholder="探索音乐、歌手、歌词、用户" autofocus="" id="inpSearch" class="search_inp" style="width: 260px;"/>
+			<span class="search_btn" id="top_searchBtn"><i class="fa fa-search" aria-hidden="true"></i></span>
+		</div>
+	</div>
+    <div class="page_search R_page" id="pageSearch" style="padding: 80px 80px;">
+		<div class="main_container" style="float: none; margin: 0 auto;">
+			<div class="listcontainer">
+				<p style="margin:20px 40px;color:#bbb;" id="search_count">搜索 "<span class="input" style="color:#0b75c3;">STRING</span>"，共搜到
+					<span class="count">0</span> 条结果</p>
+				<div class="listtab">
+					<div class="tabbtns clearfix">
+						<label class="label_btn active" for="song" id="songTab">单曲</label>
+						<label class="label_btn" for="singer" id="singerTab">歌手</label>
+<!--						<label class="label_btn" for="album">专辑</label>-->
+						<!-- <label class="label_btn" for="playlist">歌单</label>
+						<label class="label_btn" for="songlrc">歌词</label> -->
+					</div>
+					<!-- song -->
+					<input type="radio" id="song" name="tablist_s" checked="" />
+					<div class="tabitem musiclist">
+						<table>
+							<thead>
+								<tr>
+									<th>&nbsp;&nbsp;</th>
+									<th>操作</th>
+									<th>音乐标题</th>
+									<th>歌手</th>
+									<th>专辑</th>
+									<th>时长</th>
+								</tr>
+							</thead>
+							<tbody class="infolist" id="infoList_search">
+								<tr>
+									<td class="index">01</td>
+									<td><i class="fa fa-heart-o" aria-hidden="true" ></i>&nbsp;
+										<i class="fa fa-download" aria-hidden="true" ></i>
+									</td>
+									<td>-SONGNAME-</td>
+									<td>-SINGER-</td>
+									<td>-ALBUM-</td>
+									<td>00:00</td>
+								</tr>
+							</tbody>
+							</tfoot>
+						</table>
+					</div>
+					<!-- singer -->
+					<input type="radio" id="singer" name="tablist_s" />
+					<div class="tabitem singerlist" id="singerList_search">
+						<div>
+							<img src="./src/images/circle.png" alt="歌手图片">
+							<p id="singername">名字</p>
+							<p id="singerinfo">
+								专辑数:<span>0</span>&nbsp;单曲数:<span>0</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="http://localhost:8080/MusicPlayer/music/downloadSong?songname=一路向北&singer=周杰伦" id="search_dld">下载</a>
+    <script type="text/javascript" src="./src/js/lib.js"></script>
+
+	<script src="./src/js/classie.js"></script>
+	<script src="./src/js/notificationFx.js"></script>
+	<script src="./src/js/global.js"></script>
+
+	<script type="text/javascript" src="./src/js/search.js"></script>
+	<script type="text/javascript" src="./src/js/subPage.js"></script>
+</body>
+</html>

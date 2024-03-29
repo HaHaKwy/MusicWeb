@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nju.mapper.MusicMapper">
+
+<!-- 这里的songname已经是%songname% -->
+    <select id="selectByName" resultType="Music">
+        select *
+        from tb_music
+        where songName like #{songname} or singer like #{songname};
+    </select>
+
+<!--通过主键 songName+singer 查找唯一音乐 -->
+    <select id="selectMusic" resultType="Music">
+        select *
+        from tb_music
+        where songName = #{songname} and singer = #{singer};
+    </select>
+
+<!--    通过歌手名精确查询 -->
+    <select id="selectBySinger" resultType="Music">
+        select *
+        from tb_music
+        where singer = #{singername};
+    </select>
+
+<!--    使播放量++ -->
+    <update id="updatePlayCount">
+        update tb_music
+        set playCount = playCount+1
+        where songName = #{songname} and singer = #{singer};
+    </update>
+
+<!--    使收藏量++ -->
+    <update id="updateLikeCount">
+        update tb_music
+        set likeCount = likeCount+1
+        where songName = #{songname} and singer = #{singer};
+    </update>
+
+<!--    查询热门 -->
+    <select id="selectTop" resultType="Music">
+        select *
+        from tb_music
+        order by playCount+likeCount desc
+        limit 0, #{size};
+    </select>
+
+<!--    分页查询 -->
+    <select id="selectByPage" resultType="Music">
+        select *
+        from tb_music
+        limit #{begin}, #{size};
+    </select>
+
+</mapper>
